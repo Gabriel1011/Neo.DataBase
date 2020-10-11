@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataBase", "JsonDataBase\JsonDataBase.csproj", "{D5F7B07A-000E-44A7-BDB9-573A54B977DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5F7B07A-000E-44A7-BDB9-573A54B977DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F7B07A-000E-44A7-BDB9-573A54B977DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F7B07A-000E-44A7-BDB9-573A54B977DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F7B07A-000E-44A7-BDB9-573A54B977DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCE6E4DD-EBB5-4F4C-9D1B-DE7C7CF2FE88}
+	EndGlobalSection
+EndGlobal
