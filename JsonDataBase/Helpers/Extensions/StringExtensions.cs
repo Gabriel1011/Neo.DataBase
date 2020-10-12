@@ -5,10 +5,13 @@ namespace JsonDataBase.Helpers.Extensions
 {
     public static class StringExtensions
     {
-        public static async Task CheckAndCreateDirectory(this string caminho) =>
-            await Task.Run(() => { if (!Directory.Exists(caminho)) Directory.CreateDirectory(caminho); });
+        public static async Task CheckAndCreateDirectory(this string path) =>
+                await Task.Run(() => { if (!Directory.Exists(path)) Directory.CreateDirectory(path); });
 
-        public static async Task CheckAndCreateFile(this string caminho) =>
-           await Task.Run(() => { if (!File.Exists(caminho)) File.Create(caminho); });
+        public static async Task CheckAndCreateFile(this string fileName, string directory) =>
+           await Task.Run(() => { if (!File.Exists(directory + fileName)) File.Create(directory + fileName).DisposeAsync(); });
+
+        public static bool IsNullOrEmpty(this string value) => string.IsNullOrEmpty(value);
+            
     }
 }

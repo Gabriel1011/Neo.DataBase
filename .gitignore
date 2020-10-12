@@ -4,3 +4,5 @@
 
 /JsonDataBase/obj
 /JsonDataBase/bin/Debug/netcoreapp3.1
+/JsonDataBase.Console
+/.vs/JsonDataBase/v16
