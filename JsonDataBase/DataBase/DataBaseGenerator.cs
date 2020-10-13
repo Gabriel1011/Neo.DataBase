@@ -1,13 +1,13 @@
-﻿using JsonDataBase.Helpers.Configurations;
-using JsonDataBase.Helpers.Extensions;
-using JsonDataBase.Helpers.Vadations;
-using JsonDataBase.Repository.Interface;
+﻿using Neo.DataBaseHelpers.Configurations;
+using Neo.DataBaseHelpers.Extensions;
+using Neo.DataBaseHelpers.Vadations;
+using Neo.DataBaseRepository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace JsonDataBase.DataBase
+namespace Neo.DataBaseDataBase
 {
     public static class DataBaseGenerator
     {
@@ -15,8 +15,8 @@ namespace JsonDataBase.DataBase
         {
             Validation.ValidateConnection();
             var entitys = await GetEntityNames();
-            await JsonDataBaseConfiguration.LocalDataRepository.CheckAndCreateDirectory();
-            entitys.ToList().ForEach(async (entity) => { await (entity + FileFormat.Json).CheckAndCreateFile(JsonDataBaseConfiguration.LocalDataRepository); });
+            await NeoDataBaseonfiguration.LocalDataRepository.CheckAndCreateDirectory();
+            entitys.ToList().ForEach(async (entity) => { await (entity + FileFormat.Json).CheckAndCreateFile(NeoDataBaseonfiguration.LocalDataRepository); });
             
         }
 
@@ -24,7 +24,7 @@ namespace JsonDataBase.DataBase
             await Task.FromResult(
                 AppDomain.CurrentDomain.GetAssemblies()
                        .SelectMany(assembly => assembly.GetTypes())
-                       .Where(type => type.IsSubclassOf(typeof(JsonEntity)))
+                       .Where(type => type.IsSubclassOf(typeof(NeoEntity)))
                        .Select(p => p.Name));
     }
 }

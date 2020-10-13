@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonDataBase", "JsonDataBase\JsonDataBase.csproj", "{D5F7B07A-000E-44A7-BDB9-573A54B977DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo.DataBase", "JsonDataBase\Neo.DataBase.csproj", "{D5F7B07A-000E-44A7-BDB9-573A54B977DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataBase.Console", "JsonDataBase.Console\JsonDataBase.Console.csproj", "{DB6D8CA6-EA5F-4090-986A-4E2E526CE0A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonDataBase.Console", "JsonDataBase.Console\JsonDataBase.Console.csproj", "{C4D22258-2E5A-47C2-AE24-23C06EE5AE8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D5F7B07A-000E-44A7-BDB9-573A54B977DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5F7B07A-000E-44A7-BDB9-573A54B977DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5F7B07A-000E-44A7-BDB9-573A54B977DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB6D8CA6-EA5F-4090-986A-4E2E526CE0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB6D8CA6-EA5F-4090-986A-4E2E526CE0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB6D8CA6-EA5F-4090-986A-4E2E526CE0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB6D8CA6-EA5F-4090-986A-4E2E526CE0A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D22258-2E5A-47C2-AE24-23C06EE5AE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D22258-2E5A-47C2-AE24-23C06EE5AE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D22258-2E5A-47C2-AE24-23C06EE5AE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D22258-2E5A-47C2-AE24-23C06EE5AE8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

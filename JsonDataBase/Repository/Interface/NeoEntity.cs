@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace JsonDataBase.Repository.Interface
+namespace Neo.DataBaseRepository.Interface
 {
-    public abstract class JsonEntity
+    public abstract class NeoEntity
     {
          public virtual Guid Id { get; set; }        
     }

@@ -1,4 +1,4 @@
-﻿namespace JsonDataBase.Helpers.Configurations
+﻿namespace Neo.DataBaseHelpers.Configurations
 {
     public static class FileFormat 
     {

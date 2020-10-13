@@ -1,4 +1,4 @@
-﻿namespace JsonDataBase.Repository.Repository
+﻿namespace Neo.DataBaseRepository.Repository
 {
     public class AuxRepository
     {
