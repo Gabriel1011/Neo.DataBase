@@ -2,15 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageId>Neo</PackageId>
-    <Authors>Neo</Authors>
-    <Company>Neo</Company>
+    <PackageId>NeoDataBase</PackageId>
+    <Authors>Gabriel</Authors>
+    <Company>Space IT</Company>
     <Description>Neo create a local base for your aplicatons in format Json.</Description>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/Gabriel1011/JsonDataBase</RepositoryUrl>
     <PackageTags>Json, Base, Data Base, DataBase, DataBase Local</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.0-alpha</Version>
   </PropertyGroup>
 
   <ItemGroup>
