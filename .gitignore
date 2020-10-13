@@ -7,3 +7,5 @@
 /JsonDataBase.Console
 /.vs/JsonDataBase/v16
 /.vs/JsonDataBase/DesignTimeBuild
+/Neo.DataBase/bin/Debug
+/Neo.DataBase/obj
