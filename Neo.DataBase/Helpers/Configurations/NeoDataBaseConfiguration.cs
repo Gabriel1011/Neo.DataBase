@@ -1,6 +1,6 @@
 ﻿namespace Neo.DataBaseHelpers.Configurations
 {
-    public static class NeoDataBaseonfiguration
+    public static class NeoDataBaseConfiguration
     {
         private static string localDataRepository;
         public static string LocalDataRepository
