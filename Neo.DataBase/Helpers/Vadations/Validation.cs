@@ -4,9 +4,9 @@ using System;
 
 namespace Neo.DataBaseHelpers.Vadations
 {
-    public static class Validation
+    internal static class Validation
     {
-        public static void ValidateConnection()
+        internal static void ValidateConnection()
         {
             if (NeoDataBaseonfiguration.LocalDataRepository.IsNullOrEmpty())
                 throw new Exception("LocalDataRepository is requerid to use this package, use Neo.DataBaseonfiguration.SetLocalDataBaseRepository(local) to set LocalDataRepository.");

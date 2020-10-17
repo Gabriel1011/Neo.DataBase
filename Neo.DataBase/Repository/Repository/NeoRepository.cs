@@ -21,6 +21,15 @@ namespace Neo.DataBaseRepository.Repository
             LocalRepository = NeoDataBaseonfiguration.LocalDataRepository + typeof(TEntity).Name + FileFormat.Json;
         }
 
+        public IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter) => GetListAsync(filter).Result;
+        public TEntity Get(Expression<Func<TEntity, bool>> filter) => GetAsync(filter).Result;
+        public TEntity Create(TEntity entity) => CreateAsync(entity).Result;
+        public IEnumerable<TEntity> CreateList(IEnumerable<TEntity> entities) => CreateListAsync(entities).Result;
+        public TEntity Update(TEntity entity) => UpdateAsync(entity).Result;
+        public IEnumerable<TEntity> UpdateList(IEnumerable<TEntity> entities) => UpdateListAsync(entities).Result;
+        public void Delete(TEntity entity) => DeleteAsync(entity).RunSynchronously();
+        public void DeleteList(IEnumerable<TEntity> entities) => DeleteListAsync(entities).RunSynchronously();
+
         public async Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter)
         {
             using (StreamReader fs = new StreamReader(new FileStream(LocalRepository, FileMode.Open, FileAccess.Read)))
@@ -44,6 +53,13 @@ namespace Neo.DataBaseRepository.Repository
             await SetDataAsync(data);
             return await Task.FromResult(entity);
         }
+        public async Task<IEnumerable<TEntity>> CreateListAsync(IEnumerable<TEntity> entities)
+        {
+            var data = await GetDataAsync();
+            data.ToList().AddRange(entities);
+            await SetDataAsync(data);
+            return await Task.FromResult(entities);
+        }
         public async Task<TEntity> UpdateAsync(TEntity entity)
         {
             var data = await GetDataAsync();
@@ -52,18 +68,27 @@ namespace Neo.DataBaseRepository.Repository
             await SetDataAsync(data);
             return await Task.FromResult(entity);
         }
+        public async Task<IEnumerable<TEntity>> UpdateListAsync(IEnumerable<TEntity> entities)
+        {
+            var data = await GetDataAsync();
+            entities.ToList().ForEach(entity => { data.Remove(data.FirstOrDefault(p => p.Id == entity.Id) ?? throw new Exception("Data not found to delete.")); });
+            data.ToList().AddRange(entities);
+            await SetDataAsync(data);
+            return await Task.FromResult(entities);
+        }
         public async Task DeleteAsync(TEntity entity)
         {
             var data = await GetDataAsync();
             data.Remove(data.FirstOrDefault(p => p.Id == entity.Id) ?? throw new Exception("Data not found to delete."));
             await SetDataAsync(data);
         }
-        public void GerarJsonListaAsync(IList<TEntity> objeto)
+        public async Task DeleteListAsync(IEnumerable<TEntity> entities)
         {
-            using (StreamWriter fs = new StreamWriter(new FileStream(LocalRepository, FileMode.Create, FileAccess.Write)))
-                fs.Write(JsonConvert.SerializeObject(objeto, Formatting.Indented));
+            var data = await GetDataAsync();
+            entities.ToList().ForEach(entity => { data.Remove(data.FirstOrDefault(p => p.Id == entity.Id) ?? throw new Exception("Data not found to delete.")); });
+            await SetDataAsync(data);
         }
-        private async Task SetDataAsync(IList<TEntity> data)
+        private async Task SetDataAsync(IEnumerable<TEntity> data)
         {
             using (StreamWriter fs = new StreamWriter(new FileStream(LocalRepository, FileMode.Create, FileAccess.Write)))
                 await Task.Run(() => fs.Write(JsonConvert.SerializeObject(data, Formatting.Indented)));
