@@ -15,8 +15,8 @@ namespace Neo.DataBaseDataBase
         {
             Validation.ValidateConnection();
             var entitys = await GetEntityNamesAsync();
-            await NeoDataBaseonfiguration.LocalDataRepository.CheckAndCreateDirectoryAsync();
-            entitys.ToList().ForEach(async (entity) => { await (entity + FileFormat.Json).CheckAndCreateFileAsync(NeoDataBaseonfiguration.LocalDataRepository); });
+            await NeoDataBaseConfiguration.LocalDataRepository.CheckAndCreateDirectoryAsync();
+            entitys.ToList().ForEach(async (entity) => { await (entity + FileFormat.Json).CheckAndCreateFileAsync(NeoDataBaseConfiguration.LocalDataRepository); });
 
         }
 
@@ -24,8 +24,8 @@ namespace Neo.DataBaseDataBase
         {
             Validation.ValidateConnection();
             var entitys = GetEntityNames();
-            NeoDataBaseonfiguration.LocalDataRepository.CheckAndCreateDirectory();
-            entitys.ToList().ForEach((entity) => { (entity + FileFormat.Json).CheckAndCreateFile(NeoDataBaseonfiguration.LocalDataRepository); });
+            NeoDataBaseConfiguration.LocalDataRepository.CheckAndCreateDirectory();
+            entitys.ToList().ForEach((entity) => { (entity + FileFormat.Json).CheckAndCreateFile(NeoDataBaseConfiguration.LocalDataRepository); });
         }
 
         private static async Task<IEnumerable<string>> GetEntityNamesAsync() => await Task.FromResult(GetEntity());

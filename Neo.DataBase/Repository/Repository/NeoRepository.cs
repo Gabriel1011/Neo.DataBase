@@ -1,7 +1,7 @@
-﻿using Neo.DataBaseHelpers.Configurations;
+﻿using Neo.DataBase.Repository.Interface.Repository;
+using Neo.DataBaseHelpers.Configurations;
 using Neo.DataBaseHelpers.Vadations;
 using Neo.DataBaseRepository.Interface;
-using Neo.DataBaseRepository.Interface.Repository;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace Neo.DataBaseRepository.Repository
 {
-    public class NeoRepository<TEntity> : INeoRepository<TEntity> where TEntity : NeoEntity
+    public class NeoRepository<TEntity> : INeoRepository<TEntity>, INeoRepositoryAsync<TEntity> where TEntity : NeoEntity
     {
         private string LocalRepository;
         public NeoRepository()
         {
             Validation.ValidateConnection();
-            LocalRepository = NeoDataBaseonfiguration.LocalDataRepository + typeof(TEntity).Name + FileFormat.Json;
+            LocalRepository = NeoDataBaseConfiguration.LocalDataRepository + typeof(TEntity).Name + FileFormat.Json;
         }
 
         public IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter) => GetListAsync(filter).Result;

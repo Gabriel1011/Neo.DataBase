@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Neo.DataBaseHelpers.Extensions
 {
-    public static class StringExtensions
+    internal static class StringExtensions
     {
         public static async Task CheckAndCreateDirectoryAsync(this string path) =>
                 await Task.Run(() => { if (!Directory.Exists(path)) Directory.CreateDirectory(path); });
