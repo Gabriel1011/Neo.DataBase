@@ -42,3 +42,6 @@ Existem alguns métodos disponibilizado na classe NeoRepository, que podem auxil
 ![Folder example](https://github.com/Gabriel1011/Neo.DataBase/blob/master/Screenshots/INeoRepositoryAsync.png?raw=true)
 
 
+### Como instalar?
+
+Basta seguir as instruções do link https://www.nuget.org/packages/NeoDataBase
