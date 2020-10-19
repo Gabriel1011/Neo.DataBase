@@ -27,8 +27,8 @@ namespace Neo.DataBaseRepository.Repository
         public IEnumerable<TEntity> CreateList(IEnumerable<TEntity> entities) => CreateListAsync(entities).Result;
         public TEntity Update(TEntity entity) => UpdateAsync(entity).Result;
         public IEnumerable<TEntity> UpdateList(IEnumerable<TEntity> entities) => UpdateListAsync(entities).Result;
-        public void Delete(TEntity entity) => DeleteAsync(entity).RunSynchronously();
-        public void DeleteList(IEnumerable<TEntity> entities) => DeleteListAsync(entities).RunSynchronously();
+        public void Delete(TEntity entity) => DeleteAsync(entity).ConfigureAwait(false);
+        public void DeleteList(IEnumerable<TEntity> entities) => DeleteListAsync(entities).ConfigureAwait(false);
 
         public async Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter)
         {

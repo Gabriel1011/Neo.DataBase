@@ -9,3 +9,5 @@
 /.vs/JsonDataBase/DesignTimeBuild
 /Neo.DataBase/bin/Debug
 /Neo.DataBase/obj
+/Neo.Exemplos/bin/Debug/netcoreapp3.1
+/Neo.Exemplos/obj
