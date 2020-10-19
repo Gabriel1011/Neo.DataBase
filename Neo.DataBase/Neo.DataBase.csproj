@@ -11,7 +11,7 @@
     <PackageTags>Json, Base, Data Base, DataBase, DataBase Local</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>2.0.0-alpha</Version>
+    <Version>2.0.1-alpha</Version>
   </PropertyGroup>
 
   <ItemGroup>
