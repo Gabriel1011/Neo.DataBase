@@ -44,8 +44,7 @@ Existem alguns métodos disponibilizado na classe NeoRepository, que podem auxil
 
 ### Como instalar?
 
-Basta seguir as instruções do link https://www.nuget.org/packages/NeoDataBase
-
+Basta seguir as instruções que estão [aqui](https://www.nuget.org/packages/NeoDataBase). 
 
 ## O que tem no Neo e o que falta?
 
