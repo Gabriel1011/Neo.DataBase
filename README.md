@@ -45,3 +45,11 @@ Existem alguns métodos disponibilizado na classe NeoRepository, que podem auxil
 ### Como instalar?
 
 Basta seguir as instruções do link https://www.nuget.org/packages/NeoDataBase
+
+
+## O que tem no Neo e o que falta?
+
+- [x] Gera a base de dados automáticamente
+- [x] Classe para acesso ao dados
+- [ ] Classes de testes interna
+- [ ] Índices nos métodos disponíveis
