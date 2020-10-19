@@ -35,5 +35,10 @@ Existem alguns métodos disponibilizado na classe NeoRepository, que podem auxil
 
 ![Folder example](https://github.com/Gabriel1011/Neo.DataBase/blob/master/Screenshots/exemploRepository.png?raw=true)
 
-Interfaces disponíveis:
+## Interfaces disponíveis
+
+![Folder example](https://github.com/Gabriel1011/Neo.DataBase/blob/master/Screenshots/INeoRepository.png?raw=true)
+
+![Folder example](https://github.com/Gabriel1011/Neo.DataBase/blob/master/Screenshots/INeoRepositoryAsync.png?raw=true)
+
 
