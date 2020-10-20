@@ -35,7 +35,7 @@ Esse método será responsável por criar o diretório no qual estarão os arqui
 
 ## Como acessar os dados?
 
-Existem alguns métodos disponibilizado na classe NeoRepository, que podem auxiliar nessa tarefa, abaixo alguns exemplos:
+Existem alguns métodos disponibilizados na classe NeoRepository, que podem auxiliar nessa tarefa, abaixo alguns exemplos:
 
 ![Folder example](https://github.com/Gabriel1011/Neo.DataBase/blob/master/Screenshots/exemploRepository.png?raw=true)
 
