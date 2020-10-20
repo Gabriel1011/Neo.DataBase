@@ -10,14 +10,14 @@ Atualmente o Neo gera apenas bases locais no formato arquivo Json, estamos traba
 
 ## Como Utilizar?
 
-Muito simples e pratico, Neo procura oferecer uma experiência simples em sua implementação, para utilizá-lo basta seguir os passos abaixo:
+Muito simples e prático, Neo procura oferecer uma experiência simples em sua implementação, para utilizá-lo basta seguir os passos abaixo:
 
 1- Criar uma entidade que Herde de NeoEntity conforme abaixo:
 
   ![Folder example](https://github.com/Gabriel1011/Neo.DataBase/blob/master/Screenshots/exemploStudent.png?raw=true)
   
  
- 2 - Na classe de inicialização do program (program.cs ou steup.cs) adicione a seguinte linha:
+ 2 - Na classe de inicialização do program (program.cs ou Setup.cs) adicione a seguinte linha:
  
  para rotinas síncronas:
  
