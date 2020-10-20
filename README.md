@@ -1,8 +1,12 @@
 # Neo.DataBase alpha
 
+<img align="right" alt="GIF" src="https://media.giphy.com/media/MC6eSuC3yypCU/giphy.gif" />
+
 Neo DataBase foi criado com a ideia de facilitar o desenvolvimento de utilitários que necessitem de uma base local, muito simples de usar o Neo oferece classes que facilitam o acesso ao dados de forma simples e pratica.
 
 Atualmente o Neo gera apenas bases locais no formato arquivo Json, estamos trabalhando para trazer novos formatos.
+
+</br></br></br></br>
 
 ## Como Utilizar?
 
