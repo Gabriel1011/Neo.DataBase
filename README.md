@@ -52,7 +52,7 @@ Basta seguir as instruções que estão [aqui](https://www.nuget.org/packages/Ne
 
 ## O que tem no Neo e o que falta?
 
-- [x] Gera a base de dados automáticamente
+- [x] Gera a base de dados automaticamente
 - [x] Classe para acesso ao dados
 - [ ] Classes de testes interna
 - [ ] Índices nos métodos disponíveis
