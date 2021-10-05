@@ -11,23 +11,37 @@ namespace Neo.DataBaseDataBase
 {
     public static class NeoDataBaseGenerator
     {
-        public static async Task GenerateAsync()
+        public static async Task GenerateAsync() => await GenerateDataBaseAsync();
+
+        public static async Task GenerateAsync(string localDataRepository)
+        {
+            NeoDataBaseConfiguration.SetLocalDataBaseRepository(localDataRepository);
+            await GenerateDataBaseAsync();
+        }
+
+        public static void Generate() => GenerateDataBase();
+
+        public static void Generate(string localDataRepository)
+        {
+            NeoDataBaseConfiguration.SetLocalDataBaseRepository(localDataRepository);
+            GenerateDataBase();
+        }
+
+        private async static Task GenerateDataBaseAsync()
         {
             Validation.ValidateConnection();
             var entitys = await GetEntityNamesAsync();
             await NeoDataBaseConfiguration.LocalDataRepository.CheckAndCreateDirectoryAsync();
             entitys.ToList().ForEach(async (entity) => { await (entity + FileFormat.Json).CheckAndCreateFileAsync(NeoDataBaseConfiguration.LocalDataRepository); });
-
         }
 
-        public static void Generate()
+        private static void GenerateDataBase()
         {
             Validation.ValidateConnection();
             var entitys = GetEntityNames();
             NeoDataBaseConfiguration.LocalDataRepository.CheckAndCreateDirectory();
             entitys.ToList().ForEach((entity) => { (entity + FileFormat.Json).CheckAndCreateFile(NeoDataBaseConfiguration.LocalDataRepository); });
         }
-
         private static async Task<IEnumerable<string>> GetEntityNamesAsync() => await Task.FromResult(GetEntity());
 
         private static IEnumerable<string> GetEntityNames() => GetEntity();

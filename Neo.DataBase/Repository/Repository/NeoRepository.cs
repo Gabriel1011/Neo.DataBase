@@ -32,19 +32,17 @@ namespace Neo.DataBaseRepository.Repository
 
         public async Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter)
         {
-            using (StreamReader fs = new StreamReader(new FileStream(LocalRepository, FileMode.Open, FileAccess.Read)))
-            {
-                var data = JsonConvert.DeserializeObject<IList<TEntity>>(fs.ReadToEnd());
-                return await Task.FromResult(data.AsQueryable().Where(filter));
-            }
+            using var fs = new StreamReader(new FileStream(LocalRepository, FileMode.Open, FileAccess.Read));
+
+            var data = JsonConvert.DeserializeObject<IList<TEntity>>(fs.ReadToEnd());
+            return await Task.FromResult(data.AsQueryable().Where(filter));
         }
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
         {
-            using (StreamReader fs = new StreamReader(new FileStream(LocalRepository, FileMode.Open, FileAccess.Read)))
-            {
-                var data = JsonConvert.DeserializeObject<List<TEntity>>(fs.ReadToEnd());
-                return await Task.FromResult(data?.AsQueryable().FirstOrDefault(filter));
-            }
+            using var fs = new StreamReader(new FileStream(LocalRepository, FileMode.Open, FileAccess.Read));
+
+            var data = JsonConvert.DeserializeObject<List<TEntity>>(fs.ReadToEnd());
+            return await Task.FromResult(data?.AsQueryable().FirstOrDefault(filter));
         }
         public async Task<TEntity> CreateAsync(TEntity entity)
         {
@@ -90,13 +88,13 @@ namespace Neo.DataBaseRepository.Repository
         }
         private async Task SetDataAsync(IEnumerable<TEntity> data)
         {
-            using (StreamWriter fs = new StreamWriter(new FileStream(LocalRepository, FileMode.Create, FileAccess.Write)))
-                await Task.Run(() => fs.Write(JsonConvert.SerializeObject(data, Formatting.Indented)));
+            using var fs = new StreamWriter(new FileStream(LocalRepository, FileMode.Create, FileAccess.Write));
+            await Task.Run(() => fs.Write(JsonConvert.SerializeObject(data, Formatting.Indented)));
         }
         private async Task<IList<TEntity>> GetDataAsync()
         {
-            using (StreamReader fs = new StreamReader(new FileStream(LocalRepository, FileMode.Open, FileAccess.Read)))
-                return await Task.FromResult(JsonConvert.DeserializeObject<IList<TEntity>>(fs.ReadToEnd()) ?? new List<TEntity>());
+            using var fs = new StreamReader(new FileStream(LocalRepository, FileMode.Open, FileAccess.Read));
+            return await Task.FromResult(JsonConvert.DeserializeObject<IList<TEntity>>(fs.ReadToEnd()) ?? new List<TEntity>());
         }
     }
 }
